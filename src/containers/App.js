@@ -1,12 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
+
+import Toolbar from '../components/Toolbar'
 
 export default class App extends Component {
 
     render() {
         return (
-            <div>
-                Hello
-            </div>
+            <Fragment>
+                <Toolbar />
+            </Fragment>
         )
     }
 }
