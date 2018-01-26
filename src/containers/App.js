@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 
 import Toolbar from '../components/Toolbar'
 import Header from '../components/Header'
+import Searcher from '../components/Searcher'
 
 export default class App extends Component {
 
@@ -10,6 +11,7 @@ export default class App extends Component {
             <Fragment>
                 <Toolbar />
                 <Header />
+                <Searcher />
             </Fragment>
         )
     }

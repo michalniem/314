@@ -4,7 +4,6 @@
   display: flex
   flex-direction: column
   align-items: center
-  justify-content: center
   color: #fff
 
   &__title, &__subtitle
@@ -14,8 +13,10 @@
     border-radius: 5px
 
   &__title
+    margin-top: $xxl-size
     background-color: $mainYellow
     font-size: $xxl-size
+    border: 5px dashed $mainPurple
     transform: translateX(-100px)
 
   &__subtitle

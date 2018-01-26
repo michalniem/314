@@ -1,0 +1,40 @@
+.searcher
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  &__searchbar
+    display: flex
+    justify-content: center
+    align-items: center
+    transform: translateY(-200%)
+
+    &--input, &--select
+      height: $xxl-size
+      width: 300px
+      font-size: $m-size
+      border: 0
+      font-weight: 300
+      color: $fontLight
+      padding: 0 20px
+
+      &:focus
+        outline: none
+
+    &--input
+      border-right: 1px solid $mainBlueDark
+
+      &::placeholder
+        color: $fontLight
+
+    &--btn
+      height: $xxl-size
+      width: 50px
+      border: 0
+      background-color: $mainYellow
+      border-radius: 0 5px 5px 0
+
+      i
+        color: white
+        font-size: $m-size
+
