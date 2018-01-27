@@ -21,13 +21,37 @@ export default class Searcher extends Component {
         })
     };
 
+    handleFormSubmit = event => {
+        event.preventDefault();
+        if(this.state.nameInputValue.length === 0 && this.state.countrySelectValue === '' ) {
+            console.log('nie robię reqest')
+            return
+        }
+        console.log('robię reqest')
+        fetch(`http://localhost:9000/api/search?name=${this.state.nameInputValue}&country=${this.state.countrySelectValue}`)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    return new Error('Error');
+                }
+            }).then(json => {
+            console.log(json)
+
+        }).catch(error => {
+            console.error(error);
+        });
+    };
+
+
     render(){
         return(
             <div className='searcher'>
-                <SearchBar nameInputValue={this.state.nameInput}
+                <SearchBar nameInputValue={this.state.nameInputValue}
                            handleNameInput={this.handleNameInput}
                            countrySelectValue={this.state.countrySelectValue}
-                           handleCountrySelect={this.handleCountrySelect}/>
+                           handleCountrySelect={this.handleCountrySelect}
+                           handleFormSubmit={this.handleFormSubmit}/>
                 <ResultTable />
             </div>
         )
