@@ -1,54 +1,17 @@
 import React from 'react'
 
+import TableRow from './TableRow'
+
 const tableBody = props => {
+    let rows;
+    if( props.response.length !== 0 ) {
+        rows = props.response.map( ( resp, index ) => {
+            return <TableRow key={ index+resp.name } response={ resp }/>
+        });
+    }
     return(
         <tbody className='searcher__table--body'>
-            <tr>
-                <td>Akademia 1</td>
-                <td>Polska</td>
-                <td>PL</td>
-                <td>akademia.pl</td>
-            </tr>
-            <tr>
-                <td>Akademia 1</td>
-                <td>Polska</td>
-                <td>PL</td>
-                <td>akademia.pl</td>
-            </tr>
-            <tr>
-                <td>Akademia 1</td>
-                <td>Polska</td>
-                <td>PL</td>
-                <td>akademia.pl</td>
-            </tr>
-            <tr>
-                <td>Akademia 1</td>
-                <td>Polska</td>
-                <td>PL</td>
-                <td>akademia.pl</td>
-            </tr>            <tr>
-                <td>Akademia 1</td>
-                <td>Polska</td>
-                <td>PL</td>
-                <td>akademia.pl</td>
-            </tr>            <tr>
-                <td>Akademia 1</td>
-                <td>Polska</td>
-                <td>PL</td>
-                <td>akademia.pl</td>
-            </tr>
-            <tr>
-                <td>Akademia 1</td>
-                <td>Polska</td>
-                <td>PL</td>
-                <td>akademia.pl</td>
-            </tr>
-            <tr>
-                <td>Akademia 1</td>
-                <td>Polska</td>
-                <td>PL</td>
-                <td>akademia.pl</td>
-            </tr>
+            { rows }
         </tbody>
     )
 };

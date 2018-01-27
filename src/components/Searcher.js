@@ -7,6 +7,7 @@ export default class Searcher extends Component {
     state = {
         nameInputValue: '',
         countrySelectValue: '',
+        response: '',
     };
 
     handleNameInput = event => {
@@ -23,11 +24,9 @@ export default class Searcher extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        if(this.state.nameInputValue.length === 0 && this.state.countrySelectValue === '' ) {
-            console.log('nie robię reqest')
+        if( this.state.nameInputValue.length === 0 && this.state.countrySelectValue === '' ) {
             return
         }
-        console.log('robię reqest')
         fetch(`http://localhost:9000/api/search?name=${this.state.nameInputValue}&country=${this.state.countrySelectValue}`)
             .then(response => {
                 if (response.ok) {
@@ -36,11 +35,12 @@ export default class Searcher extends Component {
                     return new Error('Error');
                 }
             }).then(json => {
-            console.log(json)
-
-        }).catch(error => {
-            console.error(error);
-        });
+                this.setState({
+                    response: json
+                })
+            }).catch(error => {
+                console.error(error);
+            });
     };
 
 
@@ -52,7 +52,7 @@ export default class Searcher extends Component {
                            countrySelectValue={this.state.countrySelectValue}
                            handleCountrySelect={this.handleCountrySelect}
                            handleFormSubmit={this.handleFormSubmit}/>
-                <ResultTable />
+                <ResultTable response={this.state.response}/>
             </div>
         )
     }
