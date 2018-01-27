@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import NameInput from './NameInput'
+import CodeFiltr from './CodeFiltr'
 import CountrySelect from './CountrySelect'
 
 export default class Searcher extends Component {
@@ -9,6 +10,8 @@ export default class Searcher extends Component {
             <form className='searcher__searchbar' onSubmit={this.props.handleFormSubmit}>
                 <NameInput nameInputValue={this.props.nameInputValue}
                            handleNameInput={this.props.handleNameInput}/>
+                <CodeFiltr codeFiltrValue={this.props.codeFiltrValue}
+                           handleCodeFiltr={this.props.handleCodeFiltr}/>
                 <CountrySelect countrySelectValue={this.props.countrySelectValue}
                                handleCountrySelect={this.props.handleCountrySelect}/>
                 <button className='searcher__searchbar--btn'>

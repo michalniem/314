@@ -6,6 +6,7 @@ import ResultTable from './ResultTable'
 export default class Searcher extends Component {
     state = {
         nameInputValue: '',
+        codeFiltr: '',
         countrySelectValue: '',
         response: '',
     };
@@ -13,6 +14,12 @@ export default class Searcher extends Component {
     handleNameInput = event => {
         this.setState({
             nameInputValue: event.target.value,
+        })
+    };
+
+    handleCodeFiltr = event => {
+        this.setState({
+            codeFiltr: event.target.value,
         })
     };
 
@@ -49,10 +56,13 @@ export default class Searcher extends Component {
             <div className='searcher'>
                 <SearchBar nameInputValue={this.state.nameInputValue}
                            handleNameInput={this.handleNameInput}
+                           codeFiltrValue={this.state.codeFiltr}
+                           handleCodeFiltr={this.handleCodeFiltr}
                            countrySelectValue={this.state.countrySelectValue}
                            handleCountrySelect={this.handleCountrySelect}
                            handleFormSubmit={this.handleFormSubmit}/>
-                <ResultTable response={this.state.response}/>
+                <ResultTable response={this.state.response}
+                             codeFiltrValue={this.state.codeFiltr}/>
             </div>
         )
     }

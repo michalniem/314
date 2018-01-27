@@ -9,7 +9,8 @@ export default class ResultTable extends Component {
             <div className='searcher__table--container'>
                 <table className='searcher__table'>
                     <TableHead />
-                    <TableBody response={this.props.response}/>
+                    <TableBody response={this.props.response}
+                               codeFiltrValue={this.props.codeFiltrValue}/>
                 </table>
             </div>
         )

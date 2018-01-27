@@ -10,7 +10,7 @@
     align-items: center
     transform: translateY(-200%)
 
-    &--input, &--select
+    &--input, &--select, &--filtr
       height: $xxl-size
       width: 300px
       font-size: $m-size
@@ -22,7 +22,10 @@
       &:focus
         outline: none
 
-    &--input
+    &--filtr
+      width: 100px
+
+    &--input, &--filtr
       margin-right: 1px
 
       &::placeholder
