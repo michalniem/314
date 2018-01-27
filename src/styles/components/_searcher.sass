@@ -2,6 +2,7 @@
   display: flex
   flex-direction: column
   align-items: center
+  position: relative
 
   &__searchbar
     display: flex
@@ -22,7 +23,7 @@
         outline: none
 
     &--input
-      border-right: 1px solid $mainBlueDark
+      margin-right: 1px
 
       &::placeholder
         color: $fontLight
@@ -37,4 +38,63 @@
       i
         color: white
         font-size: $m-size
+
+  &__table
+    border-collapse: collapse
+    width: 100%
+    text-align: center
+    display: block
+
+    &--container
+      width: 80vw
+      border: 1px solid $mainBlueDark
+      margin-bottom: $l-size
+      position: absolute
+      top: -24px
+      //border: 1px solid $mainBlueDark
+      //box-shadow: 2px 2px 10px 0 $fontDark
+
+    &--head
+      display: block
+      background-color: white
+      padding-right: $m-size
+      border-bottom: 1px solid $mainBlueDark
+      width: 100%
+
+      tr
+        display: flex
+        width: 100%
+
+        th
+          padding: $m-size
+          font-weight: 400
+          color: $fontDark
+          width: 20%
+
+          &:first-child
+            width: 40%
+
+    &--body
+      display: block
+      max-height: 400px
+      overflow: scroll
+
+      tr
+        display: flex
+        width: 100%
+
+        &:nth-child(2n + 2)
+          background-color: #fff
+        &:nth-child(2n + 1)
+          background-color: rgb(255, 254, 187)
+
+        td
+          padding: $m-size
+          font-weight: 400
+          color: $fontDark
+          width: 20%
+
+          &:first-child
+            width: 40%
+
 
