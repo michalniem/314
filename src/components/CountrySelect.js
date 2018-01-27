@@ -21,7 +21,9 @@ export default class CountrySelect extends Component{
             return <option key={ country } value={ country }>{ country }</option>
         });
         return(
-            <select className='searcher__searchbar--select'>
+            <select className='searcher__searchbar--select'
+                    value={this.props.countrySelectValue}
+                    onChange={this.props.handleCountrySelect}>
                 <option value="" disabled>Enter country</option>
                 { countriesList }
             </select>
