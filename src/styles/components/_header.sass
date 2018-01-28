@@ -25,3 +25,22 @@
     transform: translate(100px, -20px)
     position: relative
     z-index: 1
+
+@media (max-width: $breakpoint)
+  .header
+    height: auto
+
+    &__title, &__subtitle
+      width: 100%
+      font-size: $m-size
+      transform: translateX(0)
+      text-align: center
+      box-shadow: none
+      border-radius: 0
+
+    &__title
+      font-size: $l-size
+      margin: 0
+
+    &__subtitle
+      font-size: $m-size

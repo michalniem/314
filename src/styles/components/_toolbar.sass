@@ -7,6 +7,8 @@
   height: 7vh
 
   &__logo
+    color: white
+    text-decoration: none
     display: flex
     align-items: center
     height: 100%
@@ -24,3 +26,11 @@
     &--social
       color: #fff
       padding-left: $m-size
+
+@media (max-width: $breakpoint)
+  .toolbar
+
+    &__logo, &__socials
+      border: 0
+      padding: 0 $s-size
+

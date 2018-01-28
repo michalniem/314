@@ -34,6 +34,7 @@
       font-weight: 300
       color: $fontLight
       margin-left: 10px
+
       &:focus
         outline: none
 
@@ -86,8 +87,7 @@
     &--head
       display: block
       background-color: white
-      //padding-right: $m-size
-      border-bottom: 1px solid $mainBlueDark
+      border-bottom: 1px solid $fontLight
       width: 100%
 
       tr
@@ -133,5 +133,36 @@
             text-decoration: none
             font-weight: 400
 
+@media (max-width: $breakpoint)
+  .searcher
 
+    &__container
+      display: flex
+      flex-direction: column
+      position: relative
 
+    &__filters
+      width: 100%
+      height: auto
+
+    &__table
+
+      &--head
+        tr
+          th
+            padding: $s-size
+      &--container
+        width: 100%
+
+    &__searchbar
+      background-color: $mainBlue
+      flex-direction: column
+      transform: translateY(0)
+      padding: 20px 0
+
+      &--input, &--select, &--btn
+        margin: 5px
+
+      &--btn
+        border-radius: 5px
+        width: 300px
