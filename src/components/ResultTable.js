@@ -10,8 +10,8 @@ export default class ResultTable extends Component {
         if( this.props.response ){
             ( this.props.response.length !== 0 )
             ? tableBody = <TableBody response={this.props.response}
-                                     codeFiltrValue={this.props.codeFiltrValue}/>
-            : results = <p>nothing is here...</p>
+                                     codeFilterValue={this.props.codeFilterValue}/>
+            : results = <p className='searcher__noresult'>Sorry, I did not find this university...</p>
         }
         return (
             <div className='searcher__table--container'>

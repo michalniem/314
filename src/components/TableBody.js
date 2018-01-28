@@ -6,7 +6,7 @@ const tableBody = props => {
     let rows;
     if( props.response.length !== 0 ) {
         rows = props.response.filter( elem => {
-            return ( elem.alpha_two_code.toLowerCase()).indexOf((props.codeFiltrValue.toLowerCase()) ) !== -1
+            return ( elem.alpha_two_code.toLowerCase()).indexOf((props.codeFilterValue.toLowerCase()) ) !== -1
         })
             .map( ( resp, index ) => {
                 return <TableRow key={ index } response={ resp }/>

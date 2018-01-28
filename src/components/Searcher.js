@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 
 import SearchBar from './SearchBar'
 import ResultTable from './ResultTable'
+import Filters from './Filters'
 
 export default class Searcher extends Component {
     state = {
         nameInputValue: '',
-        codeFiltr: '',
+        codeFilter: '',
         countrySelectValue: '',
         response: '',
     };
@@ -17,9 +18,9 @@ export default class Searcher extends Component {
         })
     };
 
-    handleCodeFiltr = event => {
+    handleCodeFilter = event => {
         this.setState({
-            codeFiltr: event.target.value,
+            codeFilter: event.target.value,
         })
     };
 
@@ -45,7 +46,7 @@ export default class Searcher extends Component {
                 this.setState({
                     response: json,
                     nameInputValue: '',
-                    codeFiltr: '',
+                    codeFilter: '',
                     countrySelectValue: '',
                 })
             }).catch(error => {
@@ -53,19 +54,20 @@ export default class Searcher extends Component {
             });
     };
 
-
     render(){
         return(
             <div className='searcher'>
                 <SearchBar nameInputValue={this.state.nameInputValue}
                            handleNameInput={this.handleNameInput}
-                           codeFiltrValue={this.state.codeFiltr}
-                           handleCodeFiltr={this.handleCodeFiltr}
                            countrySelectValue={this.state.countrySelectValue}
                            handleCountrySelect={this.handleCountrySelect}
                            handleFormSubmit={this.handleFormSubmit}/>
-                <ResultTable response={this.state.response}
-                             codeFiltrValue={this.state.codeFiltr}/>
+                <div className='searcher__container'>
+                    <Filters codeFilterValue={this.state.codeFilter}
+                             handleCodeFilter={this.handleCodeFilter}/>
+                    <ResultTable response={this.state.response}
+                                 codeFilterValue={this.state.codeFilter}/>
+                </div>
             </div>
         )
     }

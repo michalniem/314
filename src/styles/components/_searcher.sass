@@ -1,8 +1,41 @@
 .searcher
   display: flex
   flex-direction: column
-  align-items: center
   position: relative
+
+  &__container
+    display: flex
+    position: absolute
+    width: 100%
+    height: 70vh
+
+  &__noresult
+    font-size: $l-size
+    text-align: center
+    padding-top: 20px
+    font-weight: 300
+
+  &__filters
+    padding: 20px
+    width: 20%
+    height: 100%
+    display: flex
+    flex-direction: column
+
+    &--header
+      font-weight: 300
+
+    &--filter
+      height: $xl-size
+      width: 100px
+      font-size: $m-size
+      border: 0
+      border-bottom: 1px solid $fontLight
+      font-weight: 300
+      color: $fontLight
+      margin-left: 10px
+      &:focus
+        outline: none
 
   &__searchbar
     display: flex
@@ -10,7 +43,7 @@
     align-items: center
     transform: translateY(-200%)
 
-    &--input, &--select, &--filtr
+    &--input, &--select
       height: $xxl-size
       width: 300px
       font-size: $m-size
@@ -22,10 +55,7 @@
       &:focus
         outline: none
 
-    &--filtr
-      width: 100px
-
-    &--input, &--filtr
+    &--input
       margin-right: 1px
 
       &::placeholder
@@ -51,15 +81,12 @@
     display: block
 
     &--container
-      width: 80vw
-      //border: 1px solid $mainBlueDark
-      margin-bottom: $l-size
-      position: absolute
+      width: 80%
 
     &--head
       display: block
       background-color: white
-      padding-right: $m-size
+      //padding-right: $m-size
       border-bottom: 1px solid $mainBlueDark
       width: 100%
 
@@ -78,7 +105,7 @@
 
     &--body
       display: block
-      max-height: 400px
+      max-height: calc( 70vh - 55px)
       overflow-y: auto
       overflow-x: hidden
 
