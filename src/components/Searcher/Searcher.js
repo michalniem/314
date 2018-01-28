@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
-import SearchBar from './SearchBar'
-import ResultTable from './ResultTable'
-import Filters from './Filters'
+import SearchBar from './SearchBar/SearchBar'
+import ResultTable from './ResultTable/ResultTable'
+import Filters from './Filters/Filters'
 
 export default class Searcher extends Component {
     state = {
