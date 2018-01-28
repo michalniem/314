@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 export default class CountrySelect extends Component{
     render(){
@@ -30,4 +31,9 @@ export default class CountrySelect extends Component{
         )
     }
 }
+
+CountrySelect.propTypes = {
+    countrySelectValue: PropTypes.string.isRequired,
+    handleCountrySelect: PropTypes.func.isRequired
+};
 

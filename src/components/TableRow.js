@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 export default class TableRow extends Component {
     render(){
@@ -12,3 +13,13 @@ export default class TableRow extends Component {
         )
     }
 }
+
+TableRow.propTypes = {
+    response: PropTypes.shape({
+        name: PropTypes.string,
+        country: PropTypes.string,
+        alpha_two_code: PropTypes.string,
+        domains: PropTypes.array,
+        web_pages: PropTypes.array,
+    }),
+};

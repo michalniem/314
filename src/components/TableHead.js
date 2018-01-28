@@ -1,6 +1,6 @@
 import React from 'react'
 
-const tableHead = props => {
+const tableHead = () => {
     return(
         <thead className='searcher__table--head'>
             <tr>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 
 import NameInput from './NameInput'
-import CodeFilter from './CodeFilter'
 import CountrySelect from './CountrySelect'
 
 export default class SearchBar extends Component {
@@ -19,3 +19,11 @@ export default class SearchBar extends Component {
         )
     }
 }
+
+SearchBar.propTypes = {
+    nameInputValue: PropTypes.string.isRequired,
+    handleNameInput: PropTypes.func.isRequired,
+    countrySelectValue: PropTypes.string.isRequired,
+    handleCountrySelect: PropTypes.func.isRequired,
+    handleFormSubmit: PropTypes.func.isRequired,
+};

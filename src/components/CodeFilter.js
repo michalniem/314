@@ -1,14 +1,20 @@
-import React from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
-const codeFilter = props => {
-    return(
-        <label>
-            country code:
-            <input className='searcher__filters--filter'
-               value={props.codeFilterValue }
-               onChange={props.handleCodeFilter}/>
-        </label>
-    )
+export default class CodeFilter extends  Component{
+    render(){
+        return(
+            <label>
+                country code:
+                <input className='searcher__filters--filter'
+                       value={this.props.codeFilterValue }
+                       onChange={this.props.handleCodeFilter}/>
+            </label>
+        )
+    }
 };
 
-export default codeFilter
+CodeFilter.propTypes = {
+    codeFilterValue: PropTypes.string.isRequired,
+    handleCodeFilter: PropTypes.func.isRequired,
+};

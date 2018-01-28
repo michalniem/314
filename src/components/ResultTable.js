@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 import TableHead from './TableHead'
 import TableBody from './TableBody'
@@ -23,5 +24,12 @@ export default class ResultTable extends Component {
             </div>
         )
     }
-
 }
+
+ResultTable.propTypes = {
+    response: PropTypes.PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.array,
+    ]),
+    codeFilterValue: PropTypes.string.isRequired,
+};

@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
-const nameInput = props => {
-    return(
-        <input className='searcher__searchbar--input'
-               placeholder='Enter university name'
-               value={props.nameInputValue}
-               onChange={props.handleNameInput}/>
-    )
+export default class NameInput extends Component{
+    render(){
+        return(
+            <input className='searcher__searchbar--input'
+                   placeholder='Enter university name'
+                   value={this.props.nameInputValue}
+                   onChange={this.props.handleNameInput}/>
+        )
+    }
+}
+
+NameInput.propTypes = {
+    nameInputValue: PropTypes.string.isRequired,
+    handleNameInput: PropTypes.func.isRequired,
 };
-
-export default nameInput
