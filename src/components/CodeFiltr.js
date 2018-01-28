@@ -4,7 +4,7 @@ const codeFiltr = props => {
     return(
         <input className='searcher__searchbar--filtr'
                placeholder='Filtr'
-               value={props.codeFiltrValue}
+               value={props.codeFiltrValue }
                onChange={props.handleCodeFiltr}/>
     )
 };

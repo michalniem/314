@@ -43,7 +43,10 @@ export default class Searcher extends Component {
                 }
             }).then(json => {
                 this.setState({
-                    response: json
+                    response: json,
+                    nameInputValue: '',
+                    codeFiltr: '',
+                    countrySelectValue: '',
                 })
             }).catch(error => {
                 console.error(error);
