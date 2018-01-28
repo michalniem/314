@@ -1,16 +1,19 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const tableHead = () => {
-    return(
-        <thead className='searcher__table--head'>
+export default class TableHead extends Component{
+    render(){
+        return(
+            <thead className='searcher__table--head'>
             <tr>
                 <th>name</th>
                 <th>country</th>
                 <th>code</th>
                 <th>domains</th>
             </tr>
-        </thead>
-    )
+            </thead>
+        )
+    }
+    shouldComponentUpdate(){
+        return false
+    }
 };
-
-export default tableHead

@@ -10,6 +10,9 @@ export default class NameInput extends Component{
                    onChange={this.props.handleNameInput}/>
         )
     }
+    shouldComponentUpdate(nextProps){
+        return (this.props.nameInputValue !== nextProps.nameInputValue)
+    }
 }
 
 NameInput.propTypes = {

@@ -13,6 +13,9 @@ export default class Filters extends Component {
             </div>
         )
     }
+    shouldComponentUpdate(nextProps){
+        return (this.props.codeFilterValue !== nextProps.codeFilterValue)
+    }
 }
 
 Filters.propTypes = {

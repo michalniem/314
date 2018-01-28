@@ -6,13 +6,13 @@ import TableBody from './TableBody'
 
 export default class ResultTable extends Component {
     render() {
-        let results;
+        let noresults;
         let tableBody;
         if( this.props.response ){
             ( this.props.response.length !== 0 )
             ? tableBody = <TableBody response={this.props.response}
                                      codeFilterValue={this.props.codeFilterValue}/>
-            : results = <p className='searcher__noresult'>Sorry, I did not find this university...</p>
+            : noresults = <p className='searcher__noresult'>Sorry, I could not find this university...</p>
         }
         return (
             <div className='searcher__table--container'>
@@ -20,9 +20,12 @@ export default class ResultTable extends Component {
                     <TableHead />
                     { tableBody }
                 </table>
-                { results }
+                { noresults }
             </div>
         )
+    }
+    shouldComponentUpdate( nextProps ){
+        return (this.props.response !== nextProps.response || this.props.codeFilterValue !== nextProps.codeFilterValue)
     }
 }
 

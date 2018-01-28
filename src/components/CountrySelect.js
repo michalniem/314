@@ -30,6 +30,9 @@ export default class CountrySelect extends Component{
             </select>
         )
     }
+    shouldComponentUpdate(nextProps){
+        return (this.props.countrySelectValue !== nextProps.countrySelectValue)
+    }
 }
 
 CountrySelect.propTypes = {
